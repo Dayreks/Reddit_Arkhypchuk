@@ -14,7 +14,7 @@
 		473E206D27BBA28E005BB33B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 473E206C27BBA28E005BB33B /* Assets.xcassets */; };
 		473E207027BBA28E005BB33B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 473E206E27BBA28E005BB33B /* LaunchScreen.storyboard */; };
 		473E207927BBD76B005BB33B /* RedditJSONStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473E207827BBD76B005BB33B /* RedditJSONStruct.swift */; };
-		473E207B27BBD7B3005BB33B /* DatalClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473E207A27BBD7B3005BB33B /* DatalClass.swift */; };
+		473E207B27BBD7B3005BB33B /* DataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473E207A27BBD7B3005BB33B /* DataClass.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +27,7 @@
 		473E206F27BBA28E005BB33B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		473E207127BBA28E005BB33B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		473E207827BBD76B005BB33B /* RedditJSONStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedditJSONStruct.swift; sourceTree = "<group>"; };
-		473E207A27BBD7B3005BB33B /* DatalClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatalClass.swift; sourceTree = "<group>"; };
+		473E207A27BBD7B3005BB33B /* DataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataClass.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,7 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				473E207827BBD76B005BB33B /* RedditJSONStruct.swift */,
-				473E207A27BBD7B3005BB33B /* DatalClass.swift */,
+				473E207A27BBD7B3005BB33B /* DataClass.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -152,7 +152,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				473E207B27BBD7B3005BB33B /* DatalClass.swift in Sources */,
+				473E207B27BBD7B3005BB33B /* DataClass.swift in Sources */,
 				473E206827BBA28D005BB33B /* ViewController.swift in Sources */,
 				473E206427BBA28D005BB33B /* AppDelegate.swift in Sources */,
 				473E206627BBA28D005BB33B /* SceneDelegate.swift in Sources */,
