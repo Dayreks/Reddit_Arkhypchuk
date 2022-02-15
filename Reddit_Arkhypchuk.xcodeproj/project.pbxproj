@@ -13,6 +13,8 @@
 		473E206B27BBA28D005BB33B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 473E206927BBA28D005BB33B /* Main.storyboard */; };
 		473E206D27BBA28E005BB33B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 473E206C27BBA28E005BB33B /* Assets.xcassets */; };
 		473E207027BBA28E005BB33B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 473E206E27BBA28E005BB33B /* LaunchScreen.storyboard */; };
+		473E207927BBD76B005BB33B /* RedditJSONStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473E207827BBD76B005BB33B /* RedditJSONStruct.swift */; };
+		473E207B27BBD7B3005BB33B /* DatalClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473E207A27BBD7B3005BB33B /* DatalClass.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		473E206C27BBA28E005BB33B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		473E206F27BBA28E005BB33B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		473E207127BBA28E005BB33B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		473E207827BBD76B005BB33B /* RedditJSONStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedditJSONStruct.swift; sourceTree = "<group>"; };
+		473E207A27BBD7B3005BB33B /* DatalClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatalClass.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,12 +63,22 @@
 				473E206327BBA28D005BB33B /* AppDelegate.swift */,
 				473E206527BBA28D005BB33B /* SceneDelegate.swift */,
 				473E206727BBA28D005BB33B /* ViewController.swift */,
-				473E206927BBA28D005BB33B /* Main.storyboard */,
+				473E207727BBD73F005BB33B /* Helpers */,
 				473E206C27BBA28E005BB33B /* Assets.xcassets */,
 				473E206E27BBA28E005BB33B /* LaunchScreen.storyboard */,
 				473E207127BBA28E005BB33B /* Info.plist */,
+				473E206927BBA28D005BB33B /* Main.storyboard */,
 			);
 			path = Reddit_Arkhypchuk;
+			sourceTree = "<group>";
+		};
+		473E207727BBD73F005BB33B /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				473E207827BBD76B005BB33B /* RedditJSONStruct.swift */,
+				473E207A27BBD7B3005BB33B /* DatalClass.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +152,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				473E207B27BBD7B3005BB33B /* DatalClass.swift in Sources */,
 				473E206827BBA28D005BB33B /* ViewController.swift in Sources */,
 				473E206427BBA28D005BB33B /* AppDelegate.swift in Sources */,
 				473E206627BBA28D005BB33B /* SceneDelegate.swift in Sources */,
+				473E207927BBD76B005BB33B /* RedditJSONStruct.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,6 +311,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeRight UIInterfaceOrientationLandscapeLeft";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -306,7 +323,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -323,6 +340,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeRight UIInterfaceOrientationLandscapeLeft";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -334,7 +352,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
