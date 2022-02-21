@@ -8,7 +8,33 @@
 import Foundation
 
 class ParsedData{
+    var posts: [Post] = []
     
+    func fetchData(subreddit: String, limit: Int, after: String, onCompleted: @escaping (ParsedData) -> Void){
+        let urlSession = URLSession(configuration: .default)
+        let url = URL(string: "https://www.reddit.com/r/\(subreddit)/top.json?limit=\(limit)&after=\(after)")!
+        let _ = urlSession.dataTask(with: url) {data, response, error in
+            guard let data = data, let post = try? JSONDecoder().decode(RedditData.self, from: data) else { return }
+            for child in post.data.children{
+                var post = Post()
+                post.username = child.data.username
+                post.domain = child.data.domain
+                post.title = child.data.title
+                if let url = child.data.preview?.images[0].source.url{post.image = url.replacingOccurrences(of: "amp;", with: "")}
+                post.rating = child.data.rating
+                post.comments = child.data.comments
+                let calendar = Calendar.current
+                let timePassed = calendar.component(.hour, from: Date(timeIntervalSince1970: child.data.time))
+                post.time = "\(timePassed-2)h"
+                self.posts.append(post)
+            }
+                onCompleted(self)
+        }.resume()
+    }
+    
+}
+
+struct Post{
     var username: String = "default"
     var domain: String = "/default"
     var time: String = "0h"
@@ -16,23 +42,4 @@ class ParsedData{
     var image: String? = nil
     var rating: Int = 0
     var comments: Int = 0
-    
-    func fetchData(subreddit: String, limit: Int, after: String, onCompleted: @escaping (ParsedData) -> Void){
-        let urlSession = URLSession(configuration: .default)
-        let url = URL(string: "https://www.reddit.com/r/\(subreddit)/top.json?limit=\(limit)&after=\(after)")!
-        let _ = urlSession.dataTask(with: url) {data, response, error in
-            guard let data = data, let post = try? JSONDecoder().decode(RedditData.self, from: data) else { return }
-                self.username = post.data.children[0].data.username
-                self.domain = post.data.children[0].data.domain
-                self.title = post.data.children[0].data.title
-                if let url = post.data.children[0].data.preview?.images[0].source.url{self.image = url.replacingOccurrences(of: "amp;", with: "")}
-                self.rating = post.data.children[0].data.rating
-                self.comments = post.data.children[0].data.comments
-                let calendar = Calendar.current
-                let timePassed = calendar.component(.hour, from: Date(timeIntervalSince1970: post.data.children[0].data.time))
-                self.time = "\(timePassed-2)h"
-                onCompleted(self)
-        }.resume()
-    }
-    
 }

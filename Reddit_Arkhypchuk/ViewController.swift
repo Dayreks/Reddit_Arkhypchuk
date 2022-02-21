@@ -22,7 +22,7 @@ class ViewController: UIViewController {
     var isOn: Bool = false
     @IBAction func buttonPress(_ sender: UIButton) {
     isOn.toggle()
-        setButtonBackGround(view: sender, on: UIImage(named: "Mark")!, off:  UIImage(named: "UnMark")!, onOffStatus: isOn)
+        setButtonBackGround(view: sender, on: UIImage(systemName: "bookmark")!, off:  UIImage(systemName: "bookmark.fill")!, onOffStatus: isOn)
     }
     func setButtonBackGround(view: UIButton, on: UIImage, off: UIImage, onOffStatus: Bool ) {
          switch onOffStatus {
@@ -38,13 +38,13 @@ class ViewController: UIViewController {
         let emptyData = ParsedData()
         emptyData.fetchData(subreddit: "ios", limit: 1, after: ""){ postData in
             DispatchQueue.main.async {
-                self.rating.text = "\(postData.rating)"
-                self.comments.text = "\(postData.comments)"
-                self.user.text = postData.username
-                self.hours.text = postData.time
-                self.thread.text = postData.domain
-                self.titlePost.text = postData.title
-                if let url = postData.image{
+                self.rating.text = "\(postData.posts[0].rating)"
+                self.comments.text = "\(postData.posts[0].comments)"
+                self.user.text = postData.posts[0].username
+                self.hours.text = postData.posts[0].time
+                self.thread.text = postData.posts[0].domain
+                self.titlePost.text = postData.posts[0].title
+                if let url = postData.posts[0].image{
                     self.image.load(url: URL(string: url)!)
                 }
                 else {
