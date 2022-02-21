@@ -10,14 +10,14 @@ import UIKit
 class ViewController: UIViewController {
 
     
-    @IBOutlet weak var titlePost: UILabel!
-    @IBOutlet weak var rating: UILabel!
-    @IBOutlet weak var thread: UILabel!
-    @IBOutlet weak var hours: UILabel!
-    @IBOutlet weak var user: UILabel!
-    @IBOutlet weak var image: UIImageView!
-    @IBOutlet weak var comments: UILabel!
-    @IBOutlet weak var bookmark: UIButton!
+    @IBOutlet private weak var titlePost: UILabel!
+    @IBOutlet private weak var rating: UILabel!
+    @IBOutlet private weak var thread: UILabel!
+    @IBOutlet private weak var hours: UILabel!
+    @IBOutlet private weak var user: UILabel!
+    @IBOutlet private weak var image: UIImageView!
+    @IBOutlet private weak var comments: UILabel!
+    @IBOutlet private weak var bookmark: UIButton!
     
     var isOn: Bool = false
     @IBAction func buttonPress(_ sender: UIButton) {
@@ -56,16 +56,3 @@ class ViewController: UIViewController {
     }
 }
 
-extension UIImageView {
-    func load(url: URL) {
-        DispatchQueue.global().async { [weak self] in
-            if let data = try? Data(contentsOf: url) {
-                if let image = UIImage(data: data) {
-                    DispatchQueue.main.async {
-                        self?.image = image
-                    }
-                }
-            }
-        }
-    }
-}
