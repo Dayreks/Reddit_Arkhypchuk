@@ -16,10 +16,12 @@ struct RedditData: Codable{
 }
 
 struct Details:Codable{
+    let after: String?
     let children: [Child]
     
     enum CodingKeys: String, CodingKey {
         case children
+        case after
     }
 }
 
