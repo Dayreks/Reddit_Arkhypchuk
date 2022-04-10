@@ -22,7 +22,7 @@ class TableViewController: UIViewController, UITableViewDataSource, UIScrollView
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        emptyData.fetchData(pagination: false,subreddit: subreddit, limit: 15, after: ""){postData in
+        emptyData.fetchData(pagination: false,subreddit: subreddit, limit: 5, after: ""){postData in
             DispatchQueue.main.async {
                 self.data = postData.posts
                 self.postTable.reloadData()
