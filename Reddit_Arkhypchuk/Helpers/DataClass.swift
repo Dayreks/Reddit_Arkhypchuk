@@ -34,6 +34,7 @@ class ParsedData{
                 self.posts.append(post)
             }
             onCompleted(self)
+            
             if pagination{
                 self.paginating = false
             }
@@ -51,4 +52,5 @@ struct Post{
     var rating: Int = 0
     var comments: Int = 0
     var after: String? = nil
+    var isSaved: Bool = false
 }

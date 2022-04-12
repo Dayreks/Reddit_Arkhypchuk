@@ -13,7 +13,7 @@ class PostCell: UITableViewCell {
     
     var isOn: Bool = false
     @IBAction func buttonPress(_ sender: UIButton) {
-    isOn.toggle()
+        isOn.toggle()
         setButtonBackGround(view: sender, on: UIImage(systemName: "bookmark")!, off:  UIImage(systemName: "bookmark.fill")!, onOffStatus: isOn)
     }
     func setButtonBackGround(view: UIButton, on: UIImage, off: UIImage, onOffStatus: Bool ) {

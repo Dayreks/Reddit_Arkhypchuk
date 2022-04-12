@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		47198AF92804767A0048D6C7 /* PostRepositrory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47198AF82804767A0048D6C7 /* PostRepositrory.swift */; };
 		473E206427BBA28D005BB33B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473E206327BBA28D005BB33B /* AppDelegate.swift */; };
 		473E206627BBA28D005BB33B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473E206527BBA28D005BB33B /* SceneDelegate.swift */; };
 		473E206827BBA28D005BB33B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473E206727BBA28D005BB33B /* ViewController.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		47198AF82804767A0048D6C7 /* PostRepositrory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRepositrory.swift; sourceTree = "<group>"; };
 		473E206027BBA28D005BB33B /* Reddit_Arkhypchuk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reddit_Arkhypchuk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		473E206327BBA28D005BB33B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		473E206527BBA28D005BB33B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -47,6 +49,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		47198AF7280476430048D6C7 /* PostControllers */ = {
+			isa = PBXGroup;
+			children = (
+				47F72A0F27C3BEF3004C4A6B /* PostCell.swift */,
+				47198AF82804767A0048D6C7 /* PostRepositrory.swift */,
+			);
+			path = PostControllers;
+			sourceTree = "<group>";
+		};
 		473E205727BBA28D005BB33B = {
 			isa = PBXGroup;
 			children = (
@@ -66,6 +77,7 @@
 		473E206227BBA28D005BB33B /* Reddit_Arkhypchuk */ = {
 			isa = PBXGroup;
 			children = (
+				47198AF7280476430048D6C7 /* PostControllers */,
 				4759440227C519AE00602ACD /* ViewControllers */,
 				473E207727BBD73F005BB33B /* Helpers */,
 				473E206327BBA28D005BB33B /* AppDelegate.swift */,
@@ -81,7 +93,6 @@
 		473E207727BBD73F005BB33B /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				47F72A0F27C3BEF3004C4A6B /* PostCell.swift */,
 				473E207827BBD76B005BB33B /* RedditJSONStruct.swift */,
 				473E207A27BBD7B3005BB33B /* DataClass.swift */,
 			);
@@ -175,6 +186,7 @@
 				473E206427BBA28D005BB33B /* AppDelegate.swift in Sources */,
 				473E206627BBA28D005BB33B /* SceneDelegate.swift in Sources */,
 				473E207927BBD76B005BB33B /* RedditJSONStruct.swift in Sources */,
+				47198AF92804767A0048D6C7 /* PostRepositrory.swift in Sources */,
 				4759440127C519A700602ACD /* NavViewController.swift in Sources */,
 				47F72A1027C3BEF3004C4A6B /* PostCell.swift in Sources */,
 			);
