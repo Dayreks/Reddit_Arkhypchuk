@@ -41,6 +41,8 @@ struct Info:Codable{
     let preview: Preview?
     let rating: Int
     let comments: Int
+    let permalink: String
+    let id: String
     
     enum CodingKeys: String, CodingKey{
         case username = "author"
@@ -50,6 +52,8 @@ struct Info:Codable{
         case preview
         case rating = "score"
         case comments = "num_comments"
+        case permalink
+        case id
     }
 }
 
@@ -74,4 +78,18 @@ struct Source: Codable{
     enum CodingKeys:String, CodingKey{
         case url
     }
+}
+
+
+extension Encodable {
+    
+    func toJSONString() -> String {
+        let jsonData = try! JSONEncoder().encode(self)
+        return String(data: jsonData, encoding: .utf8)!
+    }
+    
+}
+
+func instantiate<T: Decodable>(jsonString: String) -> T? {
+    return try? JSONDecoder().decode(T.self, from: jsonString.data(using: .utf8)!)
 }

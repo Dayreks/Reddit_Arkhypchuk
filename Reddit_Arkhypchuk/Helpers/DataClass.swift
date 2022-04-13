@@ -31,6 +31,8 @@ class ParsedData{
                 let timePassed = calendar.component(.hour, from: Date(timeIntervalSince1970: child.data.time))
                 post.time = "\(timePassed-2)h"
                 post.after = postInit.data.after
+                post.link = "https://www.reddit.com" + child.data.permalink
+                post.id = child.data.id
                 self.posts.append(post)
             }
             onCompleted(self)
@@ -43,7 +45,7 @@ class ParsedData{
     
 }
 
-struct Post{
+struct Post: Codable{
     var username: String = "default"
     var domain: String = "/default"
     var time: String = "0h"
@@ -53,4 +55,21 @@ struct Post{
     var comments: Int = 0
     var after: String? = nil
     var isSaved: Bool = false
+    var link: String = ""
+    var id: String = ""
+    
+    enum CodingKeys: String, CodingKey{
+        case username
+        case domain
+        case time
+        case title
+        case image
+        case rating
+        case comments
+        case after
+        case isSaved
+        case link
+        case id
+    }
+    
 }

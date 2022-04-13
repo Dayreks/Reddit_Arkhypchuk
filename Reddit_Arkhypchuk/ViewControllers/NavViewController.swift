@@ -7,23 +7,30 @@
 
 import UIKit
 
+
+protocol NavViewControllerDelegate{
+        func recieveController() -> PostRepository
+}
+
 class NavViewController: UIViewController {
 
     var gainedData: Post = Post()
+    weak var delegate: TableViewController?
     
-    
-    var isOn: Bool = false
     @IBAction func buttonPress(_ sender: UIButton) {
-    isOn.toggle()
-        setButtonBackGround(view: sender, on: UIImage(systemName: "bookmark")!, off:  UIImage(systemName: "bookmark.fill")!, onOffStatus: isOn)
+        gainedData.isSaved.toggle()
+        if(!gainedData.isSaved){
+            delegate?.recieveController().savePost(gainedData)
+        } else{
+            delegate?.recieveController().removePost(gainedData)
+        }
+        self.bookmark.setImage(gainedData.isSaved ? UIImage(systemName: "bookmark")! : UIImage(systemName: "bookmark.fill")!, for: .normal)
     }
-    func setButtonBackGround(view: UIButton, on: UIImage, off: UIImage, onOffStatus: Bool ) {
-         switch onOffStatus {
-              case true:
-                   view.setImage(on, for: .normal)
-              default:
-                   view.setImage(off, for: .normal)
-    }
+    
+    @IBAction func share(_ sender: Any) {
+        let items = [gainedData.link]
+        let ac = UIActivityViewController(activityItems: items, applicationActivities: nil)
+        self.present(ac, animated: true)
     }
     
     @IBOutlet private weak var image: UIImageView!
@@ -49,6 +56,7 @@ class NavViewController: UIViewController {
         else {
             self.image.image = UIImage(named: "NoImage")!
         }
+        
     }
     
 }

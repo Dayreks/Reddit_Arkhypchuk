@@ -8,23 +8,28 @@
 import Foundation
 import UIKit
 
+
+protocol PostCellDelagate: AnyObject{
+    func shouldShare(post: Post)
+    func saveData(post: Post)
+    func loadSavedData()
+}
+
 class PostCell: UITableViewCell {
     
+    weak var delegate: PostCellDelagate?
     
-    var isOn: Bool = false
     @IBAction func buttonPress(_ sender: UIButton) {
-        isOn.toggle()
-        setButtonBackGround(view: sender, on: UIImage(systemName: "bookmark")!, off:  UIImage(systemName: "bookmark.fill")!, onOffStatus: isOn)
-    }
-    func setButtonBackGround(view: UIButton, on: UIImage, off: UIImage, onOffStatus: Bool ) {
-         switch onOffStatus {
-              case true:
-                   view.setImage(on, for: .normal)
-              default:
-                   view.setImage(off, for: .normal)
-    }
+        post.isSaved.toggle()
+        delegate.self?.saveData(post: post)
+        self.bookmark.setImage(post.isSaved ? UIImage(systemName: "bookmark")! : UIImage(systemName: "bookmark.fill")!, for: .normal)
     }
     
+    @IBAction func share(_ sender: Any) {
+        delegate.self?.shouldShare(post: post)
+    }
+    
+    @IBOutlet weak var shareButton: UIButton!
     @IBOutlet private weak var imagePost: UIImageView!
     @IBOutlet private weak var title: UILabel!
     @IBOutlet private weak var thread: UILabel!
@@ -34,7 +39,10 @@ class PostCell: UITableViewCell {
     @IBOutlet private weak var rating: UILabel!
     @IBOutlet private weak var comments: UILabel!
     
+    private var post = Post()
+    
     func configureView(post: Post) {
+        self.post = post
         self.rating.text = "\(post.rating)"
         self.comments.text = "\(post.comments)"
         self.user.text = post.username
@@ -49,6 +57,7 @@ class PostCell: UITableViewCell {
         }
         
     }
+    
 }
 
 extension UIImageView {
