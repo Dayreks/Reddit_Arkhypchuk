@@ -22,7 +22,14 @@ class PostRepository{
     func initPosts(reloadData: @escaping () -> Void ){
         emptyData.fetchData(pagination: false,subreddit: subreddit, limit: 15, after: after!){postData in
             DispatchQueue.main.async {
-                self.data = postData.posts
+                self.data = postData.posts.map{ post in
+                    for savedPost in PostRepository.shared.dataSaved{
+                        if (savedPost.id == post.id) {
+                            post.isSaved = true
+                        }
+                    }
+                    return post
+                }
                 self.dataBackUp.append(contentsOf: self.data)
                 reloadData()
             }
@@ -38,7 +45,14 @@ class PostRepository{
             return}
         emptyData.fetchData(pagination: true, subreddit: subreddit, limit: number, after: afterID){postData in
             DispatchQueue.main.async {
-                self.data = postData.posts
+                self.data = postData.posts.map{ post in
+                    for savedPost in PostRepository.shared.dataSaved{
+                        if (savedPost.id == post.id) {
+                            post.isSaved = true
+                        }
+                    }
+                    return post
+                }
                 self.dataBackUp.append(contentsOf: self.data)
                 self.after =  self.data.last?.after
             }

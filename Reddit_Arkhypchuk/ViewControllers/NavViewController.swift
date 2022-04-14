@@ -14,9 +14,13 @@ class NavViewController: UIViewController {
     weak var delegate: TableViewController?
     
     @IBAction func buttonPress(_ sender: UIButton) {
+        if(!gainedData.isSaved){
+            PostRepository.shared.savePost(gainedData)
+        } else{
+            PostRepository.shared.removePost(gainedData)
+        }
         gainedData.isSaved.toggle()
-        self.bookmark.setImage(gainedData.isSaved ? UIImage(systemName: "bookmark")! : UIImage(systemName: "bookmark.fill")!, for: .normal)
-        delegate.self?.saveData(post: gainedData)
+        gainedData.isSaved ? self.bookmark.setImage(UIImage(systemName: "bookmark.fill")!, for: .normal) : self.bookmark.setImage(UIImage(systemName: "bookmark")!, for: .normal)
     }
     
     @IBAction func share(_ sender: Any) {
@@ -44,7 +48,7 @@ class NavViewController: UIViewController {
         self.titlePost.text = gainedData.title
         gainedData.isSaved ? self.bookmark.setImage(UIImage(systemName: "bookmark.fill")!, for: .normal) : self.bookmark.setImage(UIImage(systemName: "bookmark")!, for: .normal)
         if let url = gainedData.image{
-            self.image.load(url: URL(string: url)!)
+            self.image.sd_setImage(with: URL(string: url))
         }
         else {
             self.image.image = UIImage(named: "NoImage")!

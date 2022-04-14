@@ -7,10 +7,11 @@
 
 import Foundation
 import UIKit
+import SDWebImage
 
 protocol PostCellDelagate: AnyObject{
     func shouldShare(post: Post)
-    func saveData(post: Post)
+    func saveData(post: inout Post)
     func loadSavedData()
 }
 
@@ -19,8 +20,7 @@ class PostCell: UITableViewCell {
     weak var delegate: PostCellDelagate?
     
     @IBAction func buttonPress(_ sender: UIButton) {
-        post.isSaved.toggle()
-        delegate.self?.saveData(post: post)
+        delegate.self?.saveData(post: &post)
     }
     
     @IBAction func share(_ sender: Any) {
@@ -49,7 +49,7 @@ class PostCell: UITableViewCell {
         self.title.text = post.title
         post.isSaved ? self.bookmark.setImage(UIImage(systemName: "bookmark.fill")!, for: .normal) : self.bookmark.setImage(UIImage(systemName: "bookmark")!, for: .normal)
         if let url = post.image{
-            self.imagePost.load(url: URL(string: url)!)
+            self.imagePost.sd_setImage(with: URL(string: url))
         }
         else {
             self.imagePost.image = UIImage(named: "NoImage")!
@@ -57,18 +57,4 @@ class PostCell: UITableViewCell {
         
     }
     
-}
-
-extension UIImageView {
-    func load(url: URL) {
-        DispatchQueue.global().async { [weak self] in
-            if let data = try? Data(contentsOf: url) {
-                if let image = UIImage(data: data) {
-                    DispatchQueue.main.async {
-                        self?.image = image
-                    }
-                }
-            }
-        }
-    }
 }

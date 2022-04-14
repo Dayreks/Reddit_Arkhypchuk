@@ -20,7 +20,7 @@ class ParsedData{
         let _ = urlSession.dataTask(with: url) {data, response, error in
             guard let data = data, let postInit = try? JSONDecoder().decode(RedditData.self, from: data) else { return }
             for child in postInit.data.children{
-                var post = Post()
+                let post = Post()
                 post.username = child.data.username
                 post.domain = child.data.domain
                 post.title = child.data.title
@@ -45,7 +45,7 @@ class ParsedData{
     
 }
 
-struct Post: Codable{
+class Post: Codable{
     var username: String = "default"
     var domain: String = "/default"
     var time: String = "0h"
