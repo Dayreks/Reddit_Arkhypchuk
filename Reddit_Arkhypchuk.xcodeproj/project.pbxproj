@@ -24,6 +24,8 @@
 
 /* Begin PBXFileReference section */
 		1665318F2983C88376B87E4E /* Pods_Reddit_Arkhypchuk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Reddit_Arkhypchuk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1B8255CCE5E6C180DAC7EA13 /* Pods-Reddit_Arkhypchuk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reddit_Arkhypchuk.debug.xcconfig"; path = "Target Support Files/Pods-Reddit_Arkhypchuk/Pods-Reddit_Arkhypchuk.debug.xcconfig"; sourceTree = "<group>"; };
+		24F0549BF6240E46F01A10AD /* Pods-Reddit_Arkhypchuk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reddit_Arkhypchuk.release.xcconfig"; path = "Target Support Files/Pods-Reddit_Arkhypchuk/Pods-Reddit_Arkhypchuk.release.xcconfig"; sourceTree = "<group>"; };
 		47198AF82804767A0048D6C7 /* PostRepositrory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRepositrory.swift; sourceTree = "<group>"; };
 		473E206027BBA28D005BB33B /* Reddit_Arkhypchuk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reddit_Arkhypchuk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		473E206327BBA28D005BB33B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -67,6 +69,7 @@
 				473E206227BBA28D005BB33B /* Reddit_Arkhypchuk */,
 				473E206127BBA28D005BB33B /* Products */,
 				5EDBDB060BAFDBFE269C8138 /* Frameworks */,
+				603E37296E77D3D67B7FC1A3 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -121,6 +124,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		603E37296E77D3D67B7FC1A3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1B8255CCE5E6C180DAC7EA13 /* Pods-Reddit_Arkhypchuk.debug.xcconfig */,
+				24F0549BF6240E46F01A10AD /* Pods-Reddit_Arkhypchuk.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,6 +145,7 @@
 				473E205C27BBA28D005BB33B /* Sources */,
 				473E205D27BBA28D005BB33B /* Frameworks */,
 				473E205E27BBA28D005BB33B /* Resources */,
+				D07AF0906FEBA74DC6EBF269 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -209,6 +223,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D07AF0906FEBA74DC6EBF269 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Reddit_Arkhypchuk/Pods-Reddit_Arkhypchuk-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Reddit_Arkhypchuk/Pods-Reddit_Arkhypchuk-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Reddit_Arkhypchuk/Pods-Reddit_Arkhypchuk-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -370,6 +401,7 @@
 		};
 		473E207527BBA28E005BB33B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1B8255CCE5E6C180DAC7EA13 /* Pods-Reddit_Arkhypchuk.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -399,6 +431,7 @@
 		};
 		473E207627BBA28E005BB33B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24F0549BF6240E46F01A10AD /* Pods-Reddit_Arkhypchuk.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
