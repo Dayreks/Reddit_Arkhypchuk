@@ -8,10 +8,6 @@
 import UIKit
 
 
-protocol NavViewControllerDelegate{
-        func recieveController() -> PostRepository
-}
-
 class NavViewController: UIViewController {
 
     var gainedData: Post = Post()
@@ -19,12 +15,8 @@ class NavViewController: UIViewController {
     
     @IBAction func buttonPress(_ sender: UIButton) {
         gainedData.isSaved.toggle()
-        if(!gainedData.isSaved){
-            delegate?.recieveController().savePost(gainedData)
-        } else{
-            delegate?.recieveController().removePost(gainedData)
-        }
         self.bookmark.setImage(gainedData.isSaved ? UIImage(systemName: "bookmark")! : UIImage(systemName: "bookmark.fill")!, for: .normal)
+        delegate.self?.saveData(post: gainedData)
     }
     
     @IBAction func share(_ sender: Any) {
@@ -50,6 +42,7 @@ class NavViewController: UIViewController {
         self.time.text = gainedData.time
         self.thread.text = gainedData.domain
         self.titlePost.text = gainedData.title
+        gainedData.isSaved ? self.bookmark.setImage(UIImage(systemName: "bookmark.fill")!, for: .normal) : self.bookmark.setImage(UIImage(systemName: "bookmark")!, for: .normal)
         if let url = gainedData.image{
             self.image.load(url: URL(string: url)!)
         }

@@ -17,6 +17,7 @@ class PostRepository{
     var subreddit = "ios"
     var path = FileManager.default.urls(for: .documentDirectory,in: .userDomainMask)[0].appendingPathComponent("SavedPosts.json")
     
+    static let shared = PostRepository()
     
     func initPosts(reloadData: @escaping () -> Void ){
         emptyData.fetchData(pagination: false,subreddit: subreddit, limit: 15, after: after!){postData in
@@ -25,6 +26,7 @@ class PostRepository{
                 self.dataBackUp.append(contentsOf: self.data)
                 reloadData()
             }
+            print(self.path)
         }
     }
     

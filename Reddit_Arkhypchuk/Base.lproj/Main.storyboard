@@ -82,8 +82,8 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="753" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NKo-H0-LnT">
-                                                            <rect key="frame" x="347" y="-3" width="43" height="31"/>
+                                                        <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="753" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NKo-H0-LnT">
+                                                            <rect key="frame" x="347.66666666666669" y="-2.6666666666666643" width="42.333333333333314" height="30.666666666666668"/>
                                                             <state key="normal" title="Button"/>
                                                             <buttonConfiguration key="configuration" style="plain" image="bookmark" catalog="system"/>
                                                             <connections>
@@ -211,10 +211,16 @@
                     <connections>
                         <outlet property="postTable" destination="JKa-5V-tTI" id="xhZ-OH-me5"/>
                         <outlet property="saved" destination="iM0-ji-KpM" id="Jys-gS-w2Z"/>
+                        <outlet property="searchBar" destination="MiO-Ri-KjV" id="Qa5-l2-dcP"/>
                         <outlet property="subredditTItle" destination="hn4-ua-eMW" id="pT8-PI-HPI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Euo-8S-Jsf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <searchBar contentMode="redraw" placeholder="Search post" id="MiO-Ri-KjV">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                    <textInputTraits key="textInputTraits"/>
+                </searchBar>
             </objects>
             <point key="canvasLocation" x="861.53846153846155" y="81.753554502369667"/>
         </scene>
@@ -264,7 +270,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="753" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D0c-ai-pPh">
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="753" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D0c-ai-pPh">
                                         <rect key="frame" x="347" y="1.3333333333333428" width="43" height="31"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="bookmark" catalog="system"/>

@@ -8,7 +8,6 @@
 import Foundation
 import UIKit
 
-
 protocol PostCellDelagate: AnyObject{
     func shouldShare(post: Post)
     func saveData(post: Post)
@@ -22,7 +21,6 @@ class PostCell: UITableViewCell {
     @IBAction func buttonPress(_ sender: UIButton) {
         post.isSaved.toggle()
         delegate.self?.saveData(post: post)
-        self.bookmark.setImage(post.isSaved ? UIImage(systemName: "bookmark")! : UIImage(systemName: "bookmark.fill")!, for: .normal)
     }
     
     @IBAction func share(_ sender: Any) {
@@ -49,6 +47,7 @@ class PostCell: UITableViewCell {
         self.time.text = post.time
         self.thread.text = post.domain
         self.title.text = post.title
+        post.isSaved ? self.bookmark.setImage(UIImage(systemName: "bookmark.fill")!, for: .normal) : self.bookmark.setImage(UIImage(systemName: "bookmark")!, for: .normal)
         if let url = post.image{
             self.imagePost.load(url: URL(string: url)!)
         }

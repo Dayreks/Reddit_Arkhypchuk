@@ -19,9 +19,11 @@
 		4759440127C519A700602ACD /* NavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4759440027C519A700602ACD /* NavViewController.swift */; };
 		47F72A1027C3BEF3004C4A6B /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F72A0F27C3BEF3004C4A6B /* PostCell.swift */; };
 		47F72A1227C3C9DF004C4A6B /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F72A1127C3C9DF004C4A6B /* TableViewController.swift */; };
+		6234900678CFEE28801541EA /* Pods_Reddit_Arkhypchuk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1665318F2983C88376B87E4E /* Pods_Reddit_Arkhypchuk.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1665318F2983C88376B87E4E /* Pods_Reddit_Arkhypchuk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Reddit_Arkhypchuk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		47198AF82804767A0048D6C7 /* PostRepositrory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRepositrory.swift; sourceTree = "<group>"; };
 		473E206027BBA28D005BB33B /* Reddit_Arkhypchuk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reddit_Arkhypchuk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		473E206327BBA28D005BB33B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -43,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6234900678CFEE28801541EA /* Pods_Reddit_Arkhypchuk.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +66,7 @@
 			children = (
 				473E206227BBA28D005BB33B /* Reddit_Arkhypchuk */,
 				473E206127BBA28D005BB33B /* Products */,
+				5EDBDB060BAFDBFE269C8138 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -109,6 +113,14 @@
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
+		5EDBDB060BAFDBFE269C8138 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1665318F2983C88376B87E4E /* Pods_Reddit_Arkhypchuk.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -116,6 +128,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 473E207427BBA28E005BB33B /* Build configuration list for PBXNativeTarget "Reddit_Arkhypchuk" */;
 			buildPhases = (
+				5576A6F8C6FFFAE5BA2181FE /* [CP] Check Pods Manifest.lock */,
 				473E205C27BBA28D005BB33B /* Sources */,
 				473E205D27BBA28D005BB33B /* Frameworks */,
 				473E205E27BBA28D005BB33B /* Resources */,
@@ -174,6 +187,31 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5576A6F8C6FFFAE5BA2181FE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Reddit_Arkhypchuk-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		473E205C27BBA28D005BB33B /* Sources */ = {
