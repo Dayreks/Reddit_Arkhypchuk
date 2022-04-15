@@ -33,9 +33,12 @@ class TableViewController: UIViewController, UITableViewDataSource, UIScrollView
         
         subredditTItle.title = savedActive ?  "Saved": "r/\(PostRepository.shared.subreddit)"
         
-        if(!PostRepository.shared.dataSaved.isEmpty){self.postTable.scrollToRow(at: IndexPath(row: 0, section: 0), at: .none, animated: true)}
-        
+        scrollUp()
         subredditTItle.titleView = savedActive ? searchBar : nil
+    }
+    
+    func scrollUp(){
+        if(!PostRepository.shared.dataSaved.isEmpty){self.postTable.scrollToRow(at: IndexPath(row: 0, section: 0), at: .none, animated: true)}
     }
     
     override func viewDidLoad() {
@@ -115,6 +118,10 @@ extension TableViewController: PostCellDelagate {
             PostRepository.shared.savePost(post)
         } else{
             PostRepository.shared.removePost(post)
+            if(savedActive) {
+                PostRepository.shared.data = PostRepository.shared.dataSaved
+                scrollUp()
+            }
         }
         post.isSaved.toggle()
         postTable.reloadData()
