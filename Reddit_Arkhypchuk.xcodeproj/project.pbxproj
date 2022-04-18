@@ -16,6 +16,8 @@
 		473E207027BBA28E005BB33B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 473E206E27BBA28E005BB33B /* LaunchScreen.storyboard */; };
 		473E207927BBD76B005BB33B /* RedditJSONStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473E207827BBD76B005BB33B /* RedditJSONStruct.swift */; };
 		473E207B27BBD7B3005BB33B /* DataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473E207A27BBD7B3005BB33B /* DataClass.swift */; };
+		47454160280DEA5B001AD866 /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4745415F280DEA5B001AD866 /* PostView.swift */; };
+		47454162280DEA7A001AD866 /* PostView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47454161280DEA7A001AD866 /* PostView.xib */; };
 		4759440127C519A700602ACD /* NavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4759440027C519A700602ACD /* NavViewController.swift */; };
 		47F72A1027C3BEF3004C4A6B /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F72A0F27C3BEF3004C4A6B /* PostCell.swift */; };
 		47F72A1227C3C9DF004C4A6B /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F72A1127C3C9DF004C4A6B /* TableViewController.swift */; };
@@ -37,6 +39,8 @@
 		473E207127BBA28E005BB33B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		473E207827BBD76B005BB33B /* RedditJSONStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedditJSONStruct.swift; sourceTree = "<group>"; };
 		473E207A27BBD7B3005BB33B /* DataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataClass.swift; sourceTree = "<group>"; };
+		4745415F280DEA5B001AD866 /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
+		47454161280DEA7A001AD866 /* PostView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostView.xib; sourceTree = "<group>"; };
 		4759440027C519A700602ACD /* NavViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavViewController.swift; sourceTree = "<group>"; };
 		47F72A0F27C3BEF3004C4A6B /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		47F72A1127C3C9DF004C4A6B /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
@@ -84,6 +88,7 @@
 		473E206227BBA28D005BB33B /* Reddit_Arkhypchuk */ = {
 			isa = PBXGroup;
 			children = (
+				4745415C280DEA15001AD866 /* PostView */,
 				47198AF7280476430048D6C7 /* PostControllers */,
 				4759440227C519AE00602ACD /* ViewControllers */,
 				473E207727BBD73F005BB33B /* Helpers */,
@@ -104,6 +109,15 @@
 				473E207A27BBD7B3005BB33B /* DataClass.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		4745415C280DEA15001AD866 /* PostView */ = {
+			isa = PBXGroup;
+			children = (
+				4745415F280DEA5B001AD866 /* PostView.swift */,
+				47454161280DEA7A001AD866 /* PostView.xib */,
+			);
+			path = PostView;
 			sourceTree = "<group>";
 		};
 		4759440227C519AE00602ACD /* ViewControllers */ = {
@@ -130,7 +144,6 @@
 				1B8255CCE5E6C180DAC7EA13 /* Pods-Reddit_Arkhypchuk.debug.xcconfig */,
 				24F0549BF6240E46F01A10AD /* Pods-Reddit_Arkhypchuk.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -196,6 +209,7 @@
 			files = (
 				473E207027BBA28E005BB33B /* LaunchScreen.storyboard in Resources */,
 				473E206D27BBA28E005BB33B /* Assets.xcassets in Resources */,
+				47454162280DEA7A001AD866 /* PostView.xib in Resources */,
 				473E206B27BBA28D005BB33B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -257,6 +271,7 @@
 				473E207927BBD76B005BB33B /* RedditJSONStruct.swift in Sources */,
 				47198AF92804767A0048D6C7 /* PostRepositrory.swift in Sources */,
 				4759440127C519A700602ACD /* NavViewController.swift in Sources */,
+				47454160280DEA5B001AD866 /* PostView.swift in Sources */,
 				47F72A1027C3BEF3004C4A6B /* PostCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

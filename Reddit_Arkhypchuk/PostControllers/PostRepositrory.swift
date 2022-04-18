@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 class PostRepository{
     
@@ -86,7 +87,6 @@ class PostRepository{
         encoder.outputFormatting = .prettyPrinted
         
         let data = try! encoder.encode(self.dataSaved)
-        print(self.dataSaved)
         do {
             try String(data: data, encoding: .utf8)!.write(to: self.path, atomically: true, encoding: .utf8)
         } catch {
@@ -94,5 +94,6 @@ class PostRepository{
         }
     }
     
+
     
 }

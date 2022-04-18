@@ -48,15 +48,16 @@
                                                     <rect key="frame" x="0.0" y="52" width="390" height="616"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
-                                                        <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zAo-wy-npj">
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zAo-wy-npj">
                                                             <rect key="frame" x="0.0" y="83" width="390" height="383"/>
                                                             <subviews>
-                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7Fy-gK-Oc4">
+                                                                <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7Fy-gK-Oc4">
                                                                     <rect key="frame" x="0.0" y="0.0" width="390" height="383"/>
                                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </imageView>
                                                             </subviews>
                                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                            <gestureRecognizers/>
                                                             <constraints>
                                                                 <constraint firstItem="7Fy-gK-Oc4" firstAttribute="centerY" secondItem="zAo-wy-npj" secondAttribute="centerY" id="5qY-s8-NHR"/>
                                                                 <constraint firstItem="7Fy-gK-Oc4" firstAttribute="top" secondItem="zAo-wy-npj" secondAttribute="top" id="7BK-aY-Pvb"/>
@@ -236,10 +237,10 @@
                                 <rect key="frame" x="0.0" y="109.45622028040361" width="390" height="627"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zU9-i4-wIc">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zU9-i4-wIc">
                                         <rect key="frame" x="0.0" y="87.333333333333343" width="390" height="389.66666666666663"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BLm-RP-oXq">
+                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BLm-RP-oXq">
                                                 <rect key="frame" x="0.0" y="0.0" width="390" height="389.66666666666669"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </imageView>

@@ -13,6 +13,7 @@ protocol PostCellDelagate: AnyObject{
     func shouldShare(post: Post)
     func saveData(post: inout Post)
     func loadSavedData()
+    func animation(in image: UIImageView, post: Post)
 }
 
 class PostCell: UITableViewCell {
@@ -20,12 +21,18 @@ class PostCell: UITableViewCell {
     weak var delegate: PostCellDelagate?
     
     @IBAction func buttonPress(_ sender: UIButton) {
-        delegate.self?.saveData(post: &post)
+        delegate?.saveData(post: &post)
     }
     
     @IBAction func share(_ sender: Any) {
-        delegate.self?.shouldShare(post: post)
+        delegate?.shouldShare(post: post)
     }
+    
+    @objc func gestureAction() {
+        delegate?.animation(in: imagePost, post: post)
+        buttonPress(bookmark)
+    }
+    
     
     @IBOutlet weak var shareButton: UIButton!
     @IBOutlet private weak var imagePost: UIImageView!
@@ -36,6 +43,7 @@ class PostCell: UITableViewCell {
     @IBOutlet private weak var user: UILabel!
     @IBOutlet private weak var rating: UILabel!
     @IBOutlet private weak var comments: UILabel!
+
     
     private var post = Post()
     
@@ -55,6 +63,14 @@ class PostCell: UITableViewCell {
             self.imagePost.image = UIImage(named: "NoImage")!
         }
         
+        let tapGesture = UITapGestureRecognizer(target: self,
+                                                        action: #selector(gestureAction))
+        tapGesture.numberOfTapsRequired = 2
+        tapGesture.delaysTouchesBegan = true
+        imagePost.addGestureRecognizer(tapGesture)
     }
     
+    override func prepareForReuse() {
+        gestureRecognizers?.removeAll()
+    }
 }

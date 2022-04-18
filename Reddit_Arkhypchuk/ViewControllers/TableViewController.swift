@@ -51,7 +51,7 @@ class TableViewController: UIViewController, UITableViewDataSource, UIScrollView
         
         self.postTable.keyboardDismissMode = .onDrag
         searchBar.delegate = self
-        
+
         postTable.dataSource =  self
         postTable.delegate = self
     }
@@ -137,6 +137,39 @@ extension TableViewController: PostCellDelagate {
         self.present(ac, animated: true)
     }
     
+    func animation(in image: UIImageView, post: Post){
+        let radius: CGFloat = 30
+        let path = UIBezierPath()
+
+        path.move(to: CGPoint(x: image.frame.midX - radius/2,
+                              y: image.frame.midY - radius))
+        path.addLine(to: CGPoint(x: image.frame.midX + radius/2,
+                              y: image.frame.midY - radius))
+        path.addLine(to: CGPoint(x: image.frame.midX + radius/2,
+                              y: image.frame.midY + radius))
+        path.addLine(to: CGPoint(x: image.frame.midX,
+                              y: image.frame.midY + radius / 3))
+        path.addLine(to: CGPoint(x: image.frame.midX - radius/2,
+                              y: image.frame.midY + radius))
+        path.addLine(to: CGPoint(x: image.frame.midX - radius/2,
+                              y: image.frame.midY - radius))
+        path.close()
+
+        let shapeLayer = CAShapeLayer()
+        shapeLayer.path = path.cgPath
+        shapeLayer.fillColor = post.isSaved ? UIColor.clear.cgColor : UIColor.systemBlue.cgColor
+        shapeLayer.opacity = 0.85
+        shapeLayer.strokeColor = UIColor.systemBlue.cgColor
+        shapeLayer.lineWidth = 3
+
+        image.layer.addSublayer(shapeLayer)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            UIView.transition(with: image, duration: 0.5, options: .transitionCrossDissolve) {
+            shapeLayer.isHidden = true
+        }
+            image.layer.sublayers?.forEach { $0.removeFromSuperlayer() }
+        }
+    }
     
 }
 

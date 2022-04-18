@@ -14,12 +14,7 @@ class NavViewController: UIViewController {
     weak var delegate: TableViewController?
     
     @IBAction func buttonPress(_ sender: UIButton) {
-        if(!gainedData.isSaved){
-            PostRepository.shared.savePost(gainedData)
-        } else{
-            PostRepository.shared.removePost(gainedData)
-        }
-        gainedData.isSaved.toggle()
+        delegate?.saveData(post: &gainedData)
         gainedData.isSaved ? self.bookmark.setImage(UIImage(systemName: "bookmark.fill")!, for: .normal) : self.bookmark.setImage(UIImage(systemName: "bookmark")!, for: .normal)
     }
     
@@ -28,6 +23,12 @@ class NavViewController: UIViewController {
         let ac = UIActivityViewController(activityItems: items, applicationActivities: nil)
         self.present(ac, animated: true)
     }
+    
+    @objc func gestureAction() {
+        delegate?.animation(in: image, post: gainedData)
+        buttonPress(bookmark)
+    }
+    
     
     @IBOutlet private weak var image: UIImageView!
     @IBOutlet private weak var comments: UILabel!
@@ -53,6 +54,11 @@ class NavViewController: UIViewController {
         else {
             self.image.image = UIImage(named: "NoImage")!
         }
+        let tapGesture = UITapGestureRecognizer(target: self,
+                                                action: #selector(gestureAction))
+        tapGesture.numberOfTapsRequired = 2
+        image.isUserInteractionEnabled = true
+        image.addGestureRecognizer(tapGesture)
         
     }
     
