@@ -54,6 +54,9 @@ class TableViewController: UIViewController, UITableViewDataSource, UIScrollView
 
         postTable.dataSource =  self
         postTable.delegate = self
+        
+        postTable.rowHeight = UITableView.automaticDimension
+        postTable.estimatedRowHeight = 600
     }
     
     
@@ -80,9 +83,13 @@ class TableViewController: UIViewController, UITableViewDataSource, UIScrollView
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell_id", for: indexPath) as! PostCell
-        cell.configureView(post: PostRepository.shared.data[indexPath.row])
         cell.delegate = self
+        cell.configureView(post: &PostRepository.shared.data[indexPath.row])
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 600
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -94,6 +101,8 @@ class TableViewController: UIViewController, UITableViewDataSource, UIScrollView
             }
         }
     }
+    
+    
     
     //MARK: Search Bar Config
     
@@ -137,39 +146,6 @@ extension TableViewController: PostCellDelagate {
         self.present(ac, animated: true)
     }
     
-    func animation(in image: UIImageView, post: Post){
-        let radius: CGFloat = 30
-        let path = UIBezierPath()
-
-        path.move(to: CGPoint(x: image.frame.midX - radius/2,
-                              y: image.frame.midY - radius))
-        path.addLine(to: CGPoint(x: image.frame.midX + radius/2,
-                              y: image.frame.midY - radius))
-        path.addLine(to: CGPoint(x: image.frame.midX + radius/2,
-                              y: image.frame.midY + radius))
-        path.addLine(to: CGPoint(x: image.frame.midX,
-                              y: image.frame.midY + radius / 3))
-        path.addLine(to: CGPoint(x: image.frame.midX - radius/2,
-                              y: image.frame.midY + radius))
-        path.addLine(to: CGPoint(x: image.frame.midX - radius/2,
-                              y: image.frame.midY - radius))
-        path.close()
-
-        let shapeLayer = CAShapeLayer()
-        shapeLayer.path = path.cgPath
-        shapeLayer.fillColor = post.isSaved ? UIColor.clear.cgColor : UIColor.systemBlue.cgColor
-        shapeLayer.opacity = 0.85
-        shapeLayer.strokeColor = UIColor.systemBlue.cgColor
-        shapeLayer.lineWidth = 3
-
-        image.layer.addSublayer(shapeLayer)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-            UIView.transition(with: image, duration: 0.5, options: .transitionCrossDissolve) {
-            shapeLayer.isHidden = true
-        }
-            image.layer.sublayers?.forEach { $0.removeFromSuperlayer() }
-        }
-    }
     
 }
 
