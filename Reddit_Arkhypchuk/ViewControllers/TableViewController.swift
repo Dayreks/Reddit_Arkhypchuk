@@ -134,6 +134,7 @@ extension TableViewController: PostCellDelagate {
         }
         post.isSaved.toggle()
         postTable.reloadData()
+        PostRepository.shared.savePostsBeforeExit()
     }
     
     func loadSavedData(){
