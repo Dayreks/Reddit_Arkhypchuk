@@ -16,30 +16,32 @@ struct CommentCell: View {
             VStack(alignment: .leading, spacing: 8){
                 HStack {
                     Text("/ios")
-                        .bold()
+                        .font(.custom("Font", size: 14))
                         .italic()
                     Text(username)
-                        .bold()
                         .italic()
+                        .font(.custom("Font", size: 14))
                     Spacer()
                     Text("\(created)")
-                        .bold()
+                        .font(.custom("Font", size: 14))
                 }
                 Text(body)
+                    .multilineTextAlignment(.leading)
                     .lineLimit(2)
+                    .font(.custom("Font", size: 14))
                 HStack {
                     Group {
                         Text("Rating: ")
                             .bold()
-                            .font(.title3)
+                            .font(.subheadline)
                         Text("\(rating)")
                             .bold()
-                            .font(.title3)
+                            .font(.subheadline)
                     }
                     Spacer()
                 }
             }
-            .frame(height: 100)
+            .frame(height: 80)
             .padding(16)
             .overlay(
                 RoundedRectangle(cornerRadius: 16)

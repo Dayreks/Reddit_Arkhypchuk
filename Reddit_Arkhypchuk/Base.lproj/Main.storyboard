@@ -98,23 +98,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XRL-4n-BtC" customClass="PostView" customModule="Reddit_Arkhypchuk" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="73" width="390" height="700"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </view>
+                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="s9h-dg-YsR" userLabel="Comments">
+                                <rect key="frame" x="0.0" y="88" width="390" height="722"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <connections>
+                                    <segue destination="1Jk-ch-t7w" kind="embed" id="5jC-eW-7rQ"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="C1f-Ga-8jf"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="8NS-C1-vkt"/>
                     <connections>
-                        <outlet property="postView" destination="XRL-4n-BtC" id="NXR-nV-N7G"/>
+                        <outlet property="commentsContainer" destination="s9h-dg-YsR" id="aBk-My-OgK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ovI-WC-RJ4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1672.3076923076922" y="81.042654028436019"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Ixi-uu-ZrQ">
+            <objects>
+                <viewController id="1Jk-ch-t7w" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9hk-ME-9fF">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="722"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DaX-LC-8EL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2457" y="198"/>
         </scene>
     </scenes>
     <resources>

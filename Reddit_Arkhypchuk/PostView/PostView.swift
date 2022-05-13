@@ -92,7 +92,7 @@ class PostView: UIView {
     
     //MARK: Configuration
     
-    func confirgureView(post: inout Post, delegate: PostCellDelagate?){
+    func confirgureView(post: inout Post, delegate: PostCellDelagate){
         self.delegate = delegate
         self.post = post
         self.upvotes.text = "\(post.rating)"

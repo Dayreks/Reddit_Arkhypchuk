@@ -92,7 +92,7 @@ struct UIComment: Identifiable {
 extension UIComment {
     static let testCase = UIComment(
         username: "UserTest",
-        created: "",
+        created: "12d",
         body: "Test comment about something very interesting, but no one really cares, lol",
         rating: 35,
         depth: 0,

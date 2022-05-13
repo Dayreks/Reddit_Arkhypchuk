@@ -22,9 +22,9 @@ struct CommentsTable: View {
     
     private var commentCollectionView: some View {
         ScrollView {
+            PostUIView(post: $post, delegate: self.delegate)
+                .frame(height: 550)
             LazyVStack {
-                PostUIView(post: $post, delegate: self.delegate)
-                    .frame(height: 550)
                 ForEach(modelData.commentsParsed) { comment in
                     NavigationLink(
                         destination: CommentDetails(comment: comment),

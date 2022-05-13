@@ -14,7 +14,7 @@ final class ModelData: ObservableObject {
     let emptyData = ParsedDataUI()
     
     init(subreddit: String, id: String) {
-        emptyData.load("https://www.reddit.com/r/\(subreddit)/comments/\(id).json?limit=20"){ [weak self] commentsData in
+        emptyData.load("https://www.reddit.com/r/\(subreddit)/comments/\(id).json?limit=10"){ [weak self] commentsData in
             DispatchQueue.main.async {
                 self?.commentsParsed = commentsData.comments
             }
@@ -47,8 +47,8 @@ class ParsedDataUI{
     func loadChilds(onCompleted: @escaping (ParsedDataUI) -> Void){
         if (childrenIDs.isEmpty){ return }
         
-        let array = childrenIDs.prefix(20)
-        childrenIDs = Array(childrenIDs.dropFirst(20))
+        let array = childrenIDs.prefix(10)
+        childrenIDs = Array(childrenIDs.dropFirst(10))
         var additionalIDs = Array(array).reduce("", {x,y in x + "," + y})
         additionalIDs.remove(at: additionalIDs.startIndex)
         
