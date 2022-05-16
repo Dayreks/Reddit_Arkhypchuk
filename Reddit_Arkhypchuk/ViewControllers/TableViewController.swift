@@ -62,8 +62,11 @@ class TableViewController: UIViewController, UITableViewDataSource, UIScrollView
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.isHidden = false
         postTable.reloadData()
     }
+    
+    
     
     // MARK: Navigation View
     

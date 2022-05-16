@@ -21,7 +21,6 @@ struct PostUIView: UIViewRepresentable {
     func makeUIView(context: Context) -> some PostView {
         let postView = PostView()
         postView.confirgureView(post: &post, delegate: self.delegate)
-        postView.title.numberOfLines = 3
         return postView
     }
     

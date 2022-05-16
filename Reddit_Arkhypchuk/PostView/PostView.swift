@@ -11,18 +11,18 @@ import AVFoundation
 class PostView: UIView {
     let kCONTENT_XIB_NAME = "PostView"
     
-    @IBOutlet var contentView: UIView!
-    @IBOutlet weak var image: UIImageView!
-    @IBOutlet weak var title: UILabel!
-    @IBOutlet weak var user: UILabel!
-    @IBOutlet weak var time: UILabel!
-    @IBOutlet weak var thread: UILabel!
-    @IBOutlet weak var bookmark: UIButton!
-    @IBOutlet weak var upvote: UIButton!
-    @IBOutlet weak var upvotes: UILabel!
-    @IBOutlet weak var comments: UILabel!
-    @IBOutlet weak var comment: UIButton!
-    @IBOutlet weak var share: UIButton!
+    @IBOutlet private var contentView: UIView!
+    @IBOutlet private weak var image: UIImageView!
+    @IBOutlet private weak var title: UILabel!
+    @IBOutlet private weak var user: UILabel!
+    @IBOutlet private weak var time: UILabel!
+    @IBOutlet private weak var thread: UILabel!
+    @IBOutlet private weak var bookmark: UIButton!
+    @IBOutlet private weak var upvote: UIButton!
+    @IBOutlet private weak var upvotes: UILabel!
+    @IBOutlet private weak var comments: UILabel!
+    @IBOutlet private weak var comment: UIButton!
+    @IBOutlet private weak var share: UIButton!
     
     private var shape: CAShapeLayer?
     private var tapGesture: UITapGestureRecognizer!
@@ -101,6 +101,7 @@ class PostView: UIView {
         self.time.text = post.time
         self.thread.text = post.domain
         self.title.text = post.title
+        self.title.numberOfLines = 3
         post.isSaved ? self.bookmark.setImage(UIImage(systemName: "bookmark.fill")!, for: .normal) : self.bookmark.setImage(UIImage(systemName: "bookmark")!, for: .normal)
         if let url = post.image{
             self.image.sd_setImage(with: URL(string: url))

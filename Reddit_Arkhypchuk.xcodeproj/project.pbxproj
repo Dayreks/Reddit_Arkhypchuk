@@ -17,7 +17,6 @@
 		47214267282E5494006C82B9 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47214266282E5494006C82B9 /* Post.swift */; };
 		473E206427BBA28D005BB33B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473E206327BBA28D005BB33B /* AppDelegate.swift */; };
 		473E206627BBA28D005BB33B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473E206527BBA28D005BB33B /* SceneDelegate.swift */; };
-		473E206827BBA28D005BB33B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473E206727BBA28D005BB33B /* ViewController.swift */; };
 		473E206B27BBA28D005BB33B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 473E206927BBA28D005BB33B /* Main.storyboard */; };
 		473E206D27BBA28E005BB33B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 473E206C27BBA28E005BB33B /* Assets.xcassets */; };
 		473E207027BBA28E005BB33B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 473E206E27BBA28E005BB33B /* LaunchScreen.storyboard */; };
@@ -46,7 +45,6 @@
 		473E206027BBA28D005BB33B /* Reddit_Arkhypchuk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reddit_Arkhypchuk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		473E206327BBA28D005BB33B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		473E206527BBA28D005BB33B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		473E206727BBA28D005BB33B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		473E206A27BBA28D005BB33B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		473E206C27BBA28E005BB33B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		473E206F27BBA28E005BB33B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -168,7 +166,6 @@
 		4759440227C519AE00602ACD /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				473E206727BBA28D005BB33B /* ViewController.swift */,
 				47F72A1127C3C9DF004C4A6B /* TableViewController.swift */,
 				4759440027C519A700602ACD /* NavViewController.swift */,
 			);
@@ -315,7 +312,6 @@
 				47214267282E5494006C82B9 /* Post.swift in Sources */,
 				47F72A1227C3C9DF004C4A6B /* TableViewController.swift in Sources */,
 				47214260282E532B006C82B9 /* CommentsTable.swift in Sources */,
-				473E206827BBA28D005BB33B /* ViewController.swift in Sources */,
 				473E206427BBA28D005BB33B /* AppDelegate.swift in Sources */,
 				473E206627BBA28D005BB33B /* SceneDelegate.swift in Sources */,
 				47214265282E532B006C82B9 /* CommentData.swift in Sources */,

@@ -14,10 +14,12 @@ class NavViewController: UIViewController {
     var gainedData: Post = Post()
     weak var delegate: PostCellDelagate?
     
-    @IBOutlet weak var commentsContainer: UIView!
+    @IBOutlet private weak var commentsContainer: UIView!
+    @IBOutlet weak var navbar: UINavigationItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.isHidden = true
         loadCommentsView()
     }
     
